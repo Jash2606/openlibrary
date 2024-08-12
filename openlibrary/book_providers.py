@@ -221,7 +221,7 @@ class AbstractBookProvider(Generic[TProviderMetadata]):
 
     def get_acquisitions(
         self,
-        edition: Edition,
+        edition: Edition | web.Storage,
     ) -> list[Acquisition]:
         if edition.providers:
             return [Acquisition.from_json(dict(p)) for p in edition.providers]
@@ -298,6 +298,20 @@ class InternetArchiveProvider(AbstractBookProvider[IALiteMetadata]):
             return EbookAccess.UNCLASSIFIED
         else:
             return EbookAccess.PUBLIC
+
+    def get_acquisitions(
+        self,
+        edition: Edition,
+    ) -> list[Acquisition]:
+        return [
+            Acquisition(
+                access='open-access',
+                format='web',
+                price=None,
+                url=f'https://archive.org/details/{self.get_best_identifier(edition)}',
+                provider_name=self.short_name,
+            )
+        ]
 
 
 class LibriVoxProvider(AbstractBookProvider):
@@ -425,13 +439,30 @@ class DirectProvider(AbstractBookProvider):
         return None
 
     def get_identifiers(self, ed_or_solr: Edition | dict) -> list[str]:
-        # It's an edition
-        if ed_or_solr.get('providers'):
-            return [
+        """
+        Note: This will only work for solr records if the provider field was fetched
+        in the solr request. (Note: this field is populated from db)
+        """
+        if providers := ed_or_solr.get('providers', []):
+            identifiers = [
                 provider.url
                 for provider in map(Acquisition.from_json, ed_or_solr['providers'])
                 if provider.ebook_access >= EbookAccess.PRINTDISABLED
             ]
+            to_remove = set()
+            for tbp in PROVIDER_ORDER:
+                # Avoid infinite recursion.
+                if isinstance(tbp, DirectProvider):
+                    continue
+                if not tbp.get_identifiers(ed_or_solr):
+                    continue
+                for acq in tbp.get_acquisitions(ed_or_solr):
+                    to_remove.add(acq.url)
+
+            return [
+                identifier for identifier in identifiers if identifier not in to_remove
+            ]
+
         else:
             # TODO: Not implemented for search/solr yet
             return []
@@ -482,6 +513,11 @@ class DirectProvider(AbstractBookProvider):
         )
 
 
+class WikisourceProvider(AbstractBookProvider):
+    short_name = 'wikisource'
+    identifier_key = 'wikisource'
+
+
 PROVIDER_ORDER: list[AbstractBookProvider] = [
     # These providers act essentially as their own publishers, so link to the first when
     # we're on an edition page
@@ -491,6 +527,7 @@ PROVIDER_ORDER: list[AbstractBookProvider] = [
     StandardEbooksProvider(),
     OpenStaxProvider(),
     CitaPressProvider(),
+    WikisourceProvider(),
     # Then link to IA
     InternetArchiveProvider(),
 ]

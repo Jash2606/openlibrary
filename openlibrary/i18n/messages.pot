@@ -168,6 +168,81 @@ msgstr ""
 msgid "Not queued because they are already present in the queue:"
 msgstr ""
 
+#: batch_import.html
+msgid "View Batch Status"
+msgstr ""
+
+#: batch_import_view.html
+msgid "Batch Import Status"
+msgstr ""
+
+#: batch_import_view.html
+msgid "Batch ID:"
+msgstr ""
+
+#: batch_import_view.html
+msgid "Batch Name:"
+msgstr ""
+
+#: batch_import_view.html
+msgid "Submitter:"
+msgstr ""
+
+#: batch_import_view.html
+msgid "Submit Time:"
+msgstr ""
+
+#: batch_import_view.html
+msgid "Status Summary"
+msgstr ""
+
+#: batch_import_view.html
+msgid "Import Items"
+msgstr ""
+
+#: admin/imports.html admin/imports_by_date.html batch_import_view.html
+msgid "Added Time"
+msgstr ""
+
+#: batch_import_view.html
+msgid "Import Time"
+msgstr ""
+
+#: account/import.html account/loans.html admin/imports.html
+#: admin/imports_by_date.html admin/loans_table.html admin/menu.html
+#: admin/sponsorship.html batch_import_view.html status.html
+msgid "Status"
+msgstr ""
+
+#: account/import.html admin/imports.html admin/imports_by_date.html
+#: batch_import_view.html
+msgid "Error"
+msgstr ""
+
+#: batch_import_view.html
+msgid "IA ID"
+msgstr ""
+
+#: batch_import_view.html
+msgid "Data"
+msgstr ""
+
+#: admin/imports.html admin/imports_by_date.html batch_import_view.html
+msgid "OL Key"
+msgstr ""
+
+#: RecentChangesAdmin.html batch_import_view.html
+msgid "Comments"
+msgstr ""
+
+#: batch_import_view.html merge_request_table/table_header.html
+msgid "Submitter"
+msgstr ""
+
+#: batch_import_view.html
+msgid "Not yet imported"
+msgstr ""
+
 #: design.html
 msgid "Design Pattern Library"
 msgstr ""
@@ -455,7 +530,8 @@ msgstr ""
 #: book_providers/gutenberg_read_button.html
 #: book_providers/librivox_read_button.html
 #: book_providers/openstax_read_button.html
-#: book_providers/standard_ebooks_read_button.html covers/author_photo.html
+#: book_providers/standard_ebooks_read_button.html
+#: book_providers/wikisource_read_button.html covers/author_photo.html
 #: covers/book_cover.html covers/book_cover_single_edition.html
 #: covers/book_cover_work.html covers/change.html lib/history.html
 #: my_books/dropdown_content.html native_dialog.html
@@ -603,12 +679,6 @@ msgstr ""
 #: admin/inspect/store.html admin/people/index.html status.html
 #: type/author/edit.html type/language/view.html
 msgid "Name"
-msgstr ""
-
-#: account/import.html account/loans.html admin/imports.html
-#: admin/imports_by_date.html admin/loans_table.html admin/menu.html
-#: admin/sponsorship.html status.html
-msgid "Status"
 msgstr ""
 
 #: SearchNavigation.html SubjectTags.html lib/nav_foot.html lib/nav_head.html
@@ -855,7 +925,8 @@ msgstr ""
 #: book_providers/direct_read_button.html
 #: book_providers/gutenberg_read_button.html
 #: book_providers/openstax_read_button.html
-#: book_providers/standard_ebooks_read_button.html books/custom_carousel.html
+#: book_providers/standard_ebooks_read_button.html
+#: book_providers/wikisource_read_button.html books/custom_carousel.html
 #: books/edit/edition.html books/show.html books/works-show.html trending.html
 #: type/list/embed.html widget.html
 msgid "Read"
@@ -1263,10 +1334,6 @@ msgstr ""
 
 #: account/import.html
 msgid "Reason"
-msgstr ""
-
-#: account/import.html admin/imports.html admin/imports_by_date.html
-msgid "Error"
 msgstr ""
 
 #: account/import.html
@@ -2185,14 +2252,6 @@ msgid "Identifier"
 msgstr ""
 
 #: admin/imports.html admin/imports_by_date.html
-msgid "OL Key"
-msgstr ""
-
-#: admin/imports.html admin/imports_by_date.html
-msgid "Added Time"
-msgstr ""
-
-#: admin/imports.html admin/imports_by_date.html
 msgid "Imported Time"
 msgstr ""
 
@@ -2362,7 +2421,8 @@ msgstr ""
 
 #: admin/loans_table.html book_providers/cita_press_download_options.html
 #: book_providers/ia_download_options.html
-#: book_providers/openstax_download_options.html books/edit/edition.html
+#: book_providers/openstax_download_options.html
+#: book_providers/wikisource_download_options.html books/edit/edition.html
 msgid "PDF"
 msgstr ""
 
@@ -3061,6 +3121,7 @@ msgstr ""
 #: book_providers/librivox_download_options.html
 #: book_providers/openstax_download_options.html
 #: book_providers/standard_ebooks_download_options.html
+#: book_providers/wikisource_download_options.html
 msgid "Download Options"
 msgstr ""
 
@@ -3090,6 +3151,7 @@ msgstr ""
 #: book_providers/librivox_read_button.html
 #: book_providers/openstax_read_button.html
 #: book_providers/standard_ebooks_read_button.html
+#: book_providers/wikisource_read_button.html
 #: check_ins/reading_goal_progress.html
 msgid "Learn more"
 msgstr ""
@@ -3286,6 +3348,45 @@ msgid ""
 "source, free of copyright restrictions, and free of cost."
 msgstr ""
 
+#: book_providers/wikisource_download_options.html
+msgid "Download PDF from Wikisource"
+msgstr ""
+
+#: book_providers/wikisource_download_options.html
+msgid "Download MOBI from Wikisource"
+msgstr ""
+
+#: book_providers/wikisource_download_options.html
+msgid "MOBI (for Kindle)"
+msgstr ""
+
+#: book_providers/wikisource_download_options.html
+msgid "Download EPUB from Wikisource"
+msgstr ""
+
+#: book_providers/wikisource_download_options.html
+msgid "EPUB (for most other e-readers)"
+msgstr ""
+
+#: book_providers/wikisource_download_options.html
+msgid "Read at Wikisource"
+msgstr ""
+
+#: book_providers/wikisource_read_button.html
+msgid "Read eBook on Wikisource"
+msgstr ""
+
+#: book_providers/wikisource_read_button.html
+msgid ""
+"This book is available from <a "
+"href=\"https://wikisource.org/\">Wikisource</a>. Wikisource, a <a "
+"href=\"https://www.wikimedia.org/\">Wikimedia Foundation</a> project, is "
+"a trusted book provider of works available under the <a "
+"href=\"https://creativecommons.org/licenses/by-sa/4.0/\">CC-BY-SA</a> "
+"open content license, such as essays, historical documents, letters, "
+"speeches, and public domain books."
+msgstr ""
+
 #: books/RelatedWorksCarousel.html
 msgid "You might also like"
 msgstr ""
@@ -3358,7 +3459,6 @@ msgid "Who is the publisher?"
 msgstr ""
 
 #: books/add.html books/edit/edition.html books/edit/excerpts.html
-#: type/author/edit.html
 msgid "For example:"
 msgstr ""
 
@@ -4853,11 +4953,12 @@ msgid "Select this work"
 msgstr ""
 
 #: jsdef/LazyWorkPreview.html
-#, python-format
-msgid "%(count)d edition"
-msgid_plural "%(count)d editions"
-msgstr[0] ""
-msgstr[1] ""
+msgid "1 edition"
+msgstr ""
+
+#: jsdef/LazyWorkPreview.html
+msgid "editions"
+msgstr ""
 
 #: languages/index.html
 #, python-format
@@ -5692,10 +5793,6 @@ msgid "Submitter ▾"
 msgstr ""
 
 #: merge_request_table/table_header.html
-msgid "Submitter"
-msgstr ""
-
-#: merge_request_table/table_header.html
 msgid "Filter submitters"
 msgstr ""
 
@@ -5984,7 +6081,7 @@ msgstr ""
 
 #: recentchanges/merge/comment.html
 #, python-format
-msgid "Merged %(page_type)s into primary %(record_type) record."
+msgid "Merged %(page_type)s into primary %(record_type)s record."
 msgstr ""
 
 #: recentchanges/merge/message.html
@@ -6449,6 +6546,12 @@ msgstr ""
 
 #: type/author/edit.html
 msgid "Does this author go by any other names?"
+msgstr ""
+
+#: type/author/edit.html
+msgid ""
+"For example: Lev Nikolayevich Tolstoy was also known as Leo Tolstoy. "
+"Please list one name per line."
 msgstr ""
 
 #: type/author/edit.html
@@ -7410,10 +7513,6 @@ msgstr ""
 
 #: RecentChangesAdmin.html
 msgid "Path"
-msgstr ""
-
-#: RecentChangesAdmin.html
-msgid "Comments"
 msgstr ""
 
 #: RecentChangesAdmin.html
